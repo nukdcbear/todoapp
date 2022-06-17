@@ -45,7 +45,7 @@ dagger.#Plan & {
 		deploy: netlify.#Deploy & {
 			contents: actions.build.output
 			site:     string | *"dagger-todoapp"
-			team:	 string | *"nukdcbear"
+			team:     string | *"nukdcbear"
 		}
 	}
 }
