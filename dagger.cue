@@ -10,7 +10,7 @@ import (
 
 dagger.#Plan & {
 	actions: {
-		// Load the todoapp source code 
+		// Load the todoapp source code
 		source: core.#Source & {
 			path: "."
 			exclude: [
@@ -45,6 +45,7 @@ dagger.#Plan & {
 		deploy: netlify.#Deploy & {
 			contents: actions.build.output
 			site:     string | *"dagger-todoapp"
+			team:	 string | *"nukdcbear"
 		}
 	}
 }
