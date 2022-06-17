@@ -10,7 +10,7 @@ on:
 env:
   # This needs to be unique across all of netlify.app
   APP_NAME: todoapp-dagger-dcbear
-  NETLIFY_TEAM: "DC Barringer's team"
+  NETLIFY_TEAM: "nukdcbear"
 
 jobs:
   dagger:
