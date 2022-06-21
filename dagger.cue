@@ -12,9 +12,9 @@ dagger.#Plan & {
 	client: {
 		env: {
 			NETLIFY_TOKEN: dagger.#Secret
-			USER:  string
+			USER:          string
 			NETLIFY_TEAM:  string
-			APP_NAME:  string
+			APP_NAME:      string
 		}
 	}
 
