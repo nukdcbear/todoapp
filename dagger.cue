@@ -9,6 +9,13 @@ import (
 )
 
 dagger.#Plan & {
+	client: {
+		env: {
+			NETLIFY_TOKEN: dagger.#Secret
+			USER:  string
+		}
+	}
+
 	actions: {
 		// Load the todoapp source code
 		source: core.#Source & {
@@ -44,8 +51,8 @@ dagger.#Plan & {
 		// Deploy todoapp
 		deploy: netlify.#Deploy & {
 			contents: actions.build.output
-			site:     string | *"dagger-todoapp"
-			team:     string | *"nukdcbear"
+			site:     "\(client.env.USER)-dagger-todoapp"
+			token:    client.env.NETLIFY_TOKEN
 		}
 	}
 }
