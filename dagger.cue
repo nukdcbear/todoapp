@@ -53,6 +53,7 @@ dagger.#Plan & {
 			contents: actions.build.output
 			site:     "\(client.env.USER)-dagger-todoapp"
 			token:    client.env.NETLIFY_TOKEN
+			team:     client.env.USER
 		}
 	}
 }
