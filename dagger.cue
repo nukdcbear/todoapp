@@ -12,6 +12,7 @@ dagger.#Plan & {
 	client: {
 		env: {
 			NETLIFY_TOKEN: dagger.#Secret
+			USER:  string
 			GITHUB_REPOSITORY_OWNER:  string
 		}
 	}
@@ -51,7 +52,7 @@ dagger.#Plan & {
 		// Deploy todoapp
 		deploy: netlify.#Deploy & {
 			contents: actions.build.output
-			site:     "\(client.env.GITHUB_REPOSITORY_OWNER)-dagger-todoapp"
+			site:     "\(client.env.user)-dagger-todoapp"
 			token:    client.env.NETLIFY_TOKEN
 			team:     client.env.GITHUB_REPOSITORY_OWNER
 		}
